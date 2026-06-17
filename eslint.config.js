@@ -18,6 +18,13 @@ export default defineConfig([
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
     rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [{ regex: '^@mui/[^/]+$' }],
+        },
+      ],
+
       'no-console': 'warn',
       'no-unused-vars': 'warn',
       semi: ['warn', 'never'],
